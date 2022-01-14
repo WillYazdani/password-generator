@@ -6,11 +6,11 @@ var special = "!@#$%^&*()-=_+[]{}~`'<>,./?|:;";
 //generator
 var generatePassword = function() {
 
-  //length prompts
+  //length prompt
   var length = "";
 
   while (length === "" || length === null) {
-    var passLength = prompt("How long would you like your password to be? Must be 8-18 characters.");
+    var passLength = prompt("How long would you like your password to be? Must be 8-128 characters.");
 
     if (isNaN(passLength)) {
       window.alert("Please enter value between 8-128.");
@@ -25,6 +25,8 @@ var generatePassword = function() {
     }
   }
 
+  //character selectiion
+
   //lowercase confirm
   var lowerCase = window.confirm("Click 'OK' if you would like your password to contain lowercase characters.");
 
@@ -37,31 +39,38 @@ var generatePassword = function() {
   //special confirm
   var specialChars = window.confirm("Click 'OK' if you would like your password to contain special characters.");
 
-  //character check
-  var passOutput = "";
+  //no selection
+  if (lowerCase === false && upperCase === false && numericChars === false && specialChars === false) {
+    window.alert("You must select a character type. Try again.");
+    generatePassword();
+  } else {
 
-  if (lowerCase) {
-    passOutput += alphabet.toLowerCase();
-  }
-  if (upperCase) {
-    passOutput += alphabet.toUpperCase();
-  }
-  if (numericChars) {
-    passOutput += numeric;
-  }
-  if (specialChars) {
-    passOutput += special;
-  }
+    //character check
+    var passOutput = "";
 
-  //rng
-  var password = "";
-  for (var i = 0; i < length; i++) {
-    var rng = passOutput.charAt(Math.floor(Math.random() * passOutput.length));
-    password += rng;
+    if (lowerCase) {
+      passOutput += alphabet.toLowerCase();
+    }
+    if (upperCase) {
+      passOutput += alphabet.toUpperCase();
+    }
+    if (numericChars) {
+      passOutput += numeric;
+    }
+    if (specialChars) {
+      passOutput += special;
+    }
+
+    //rng
+    var password = "";
+
+    for (var i = 0; i < length; i++) {
+      var rng = passOutput.charAt(Math.floor(Math.random() * passOutput.length));
+      password += rng;
+    }
+
+    return password;
   }
-
-  return password;
-
 };
 
 // Get references to the #generate element
