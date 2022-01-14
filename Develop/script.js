@@ -1,7 +1,7 @@
 //password characters
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
 var numeric = "123456789";
-var special = "!@#$%^&*()-=_+[]{}~`<>,./?|:;";
+var special = "!@#$%^&*()-=_+[]{}~`'<>,./?|:;";
 
 //generator
 var generatePassword = function() {
