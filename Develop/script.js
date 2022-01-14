@@ -1,8 +1,3 @@
-//password characters
-var alphabet = "abcdefghijklmnopqrstuvwxyz";
-var numeric = "123456789";
-var special = "!@#$%^&*()-=_+[]{}~`'<>,./?|:;";
-
 //generator
 var generatePassword = function() {
 
@@ -73,10 +68,12 @@ var generatePassword = function() {
   }
 };
 
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+//password characters
+var alphabet = "abcdefghijklmnopqrstuvwxyz";
+var numeric = "123456789";
+var special = "!@#$%^&*()-=_+[]{}~`'<>,./?|:;";
 
-// Write password to the #password input
+//password display
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -85,5 +82,8 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
+//button
+var generateBtn = document.querySelector("#generate");
+
+//button click
 generateBtn.addEventListener("click", writePassword);
