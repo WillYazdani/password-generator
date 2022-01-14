@@ -37,23 +37,32 @@ var generatePassword = function() {
   //special confirm
   var specialChars = window.confirm("Click 'OK' if you would like your password to contain special characters.");
 
+  //character check
+  var passOutput = "";
+
+  if (lowerCase) {
+    passOutput += alphabet.toLowerCase();
+  }
+  if (upperCase) {
+    passOutput += alphabet.toUpperCase();
+  }
+  if (numericChars) {
+    passOutput += numeric;
+  }
+  if (specialChars) {
+    passOutput += special;
+  }
+
+  //rng
+  var password = "";
+  for (var i = 0; i < length; i++) {
+    var rng = passOutput.charAt(Math.floor(Math.random() * passOutput.length));
+    password += rng;
+  }
+
+  return password;
+
 };
-
-//character check
-var passOutput = "";
-if (lowerCase) {
-  passOutput += alphabet.toLowerCase();
-}
-if (upperCase) {
-  passOutput += alphabet.toUpperCase();
-}
-if (numericChars) {
-  passOutput += numeric;
-}
-if (specialChars) {
-  passOutput += special;
-}
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -69,20 +78,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
-
-//button generates 
-
-//prompt for criteria
-
-//prompt for length 8-128
-
-//prompt for character types - lowercase, uppercase, numeric, special characters
-
-//when prompts are answered then password is generated matches selected criteria
-
-//when password is generated then it is displayed in an alert or on the page
