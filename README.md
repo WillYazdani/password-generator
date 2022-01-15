@@ -8,5 +8,10 @@
 - Password is displayed on screen once the prompts are completed
 - App uses JS to complete the goal
 
+## Built With:
+- HTML
+- CSS
+- JS
+
 ## Live Application:
 https://willyazdani.github.io/password-generator/
