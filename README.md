@@ -1,6 +1,6 @@
 # Password Generator Starter Code
 
-![password-generator](./develop/assets/pass-gen.jpg)
+![password-generator](/develop/assets/pass-gen.jpg)
 
 ## Project Goals:
 - Create a password generator that creates a secure and unique password
