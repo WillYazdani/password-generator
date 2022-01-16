@@ -1,4 +1,4 @@
-# Password Generator Starter Code
+# Password Generator
 
 ![password-generator](Develop/Assets/pass-gen.jpg)
 
